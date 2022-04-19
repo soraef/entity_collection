@@ -1,7 +1,6 @@
 name: entity_collection
 description: A new Flutter package project.
 version: 0.0.1
-homepage: "f"
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
@@ -15,7 +14,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-  collection: ^1.16.0
+  collection: ^1.15.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
