@@ -1,6 +1,7 @@
 name: entity_collection
-description: A new Flutter package project.
+description: Provides an EntityMap that holds a collection of Entity classes with id and Immutable operationsProvider 
 version: 1.0.0
+repository: https://github.com/soraef/entity_collection
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
