@@ -4,5 +4,5 @@
 
 library entity_collection;
 
-export 'entity.dart';
-export 'entity_map.dart';
+export 'src/entity.dart';
+export 'src/entity_map.dart';
