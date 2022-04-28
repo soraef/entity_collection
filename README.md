@@ -41,7 +41,7 @@ final removeEntityMap = entityMap.remove(entity);
 
 ## Usage
 
-### Entityを定義する
+### Define Entity
 As an example, we define the User class.
 The User class is an Entity with String type id and name as properties.
 

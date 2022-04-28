@@ -1,6 +1,6 @@
 name: entity_collection
 description: Provides an EntityMap that holds a collection of Entity classes with id and Immutable operations Provider 
-version: 1.0.0
+version: 1.0.2
 repository: https://github.com/soraef/entity_collection
 
 environment:
