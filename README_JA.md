@@ -15,11 +15,11 @@ Provides an EntityMap that holds a collection of Entity classes with id and Immu
 
 ## Features
 
-It provides an Entity abstract class with an id property of type Id and an EntityMap class that manages a collection of Entities.
+Id型のidプロパティをもつEntity抽象クラスとEntityのコレクションを管理するEntityMapクラスを提供します。
 
-The motivation for this package is to provide a way to operate on Entity collections in an Immutable way.
+このパッケージのモチベーションはEntityのコレクションをImmutableに操作する方法を提供することです。
 
-To add Entity/Id pairs in Dart's Map class in an Immutable way, one must write
+Immutableな方法でDartのMapクラスでEntityとIdのペアを追加する場合、以下のように書かなければなりません。
 
 ```dart
 /// put entity
@@ -29,7 +29,7 @@ final putEntityMap = {...entityMap, id: entity}
 final removeEntityMap = {...entityMap}..removeWhere((id, _) => id == entity.id);
 ```
 
-In this package, the EntityMap class, which wraps the Map class, can be used to perform Immutable operations on Entity in a readable.
+本パッケージではMapクラスをラップした、EntityMapクラスを用いることで、EntityのImmutableな操作をリーダブルに行うことができます。
 
 ```dart
 /// put entity
@@ -42,8 +42,8 @@ final removeEntityMap = entityMap.remove(entity);
 ## Usage
 
 ### Entityを定義する
-As an example, we define the User class.
-The User class is an Entity with String type id and name as properties.
+例としてUserクラスを定義します。
+UserクラスはString型のidとnameをプロパティとして持つEntityです。
 
 ```dart
 class User implements Entity<String> {
@@ -55,15 +55,15 @@ class User implements Entity<String> {
 }
 ```
 
-Declare `EntityMap<String, User>` to manage a collection of User classes.
-Since `EntityMap<String, User>` is long, define Users as an alias.
+Userクラスのコレクションを管理する場合`EntityMap<String, User>`を宣言します。
+`EntityMap<String, User>`は長いのでエイリアスとして, Usersを定義します。
 
 ```dart
 typedef Users = EntityMap<String, User>;
 ```
 
-This completes the preparation.
-Now we can use the API of the EntityMap class to operate on the User collection Immutably.
+これで準備は完了です。
+あとはEntityMapクラスのAPIを用いて、UserのコレクションをImmutableに操作することができます。
 
 ```dart
 final user1 = User("1", "Anya");
@@ -98,8 +98,8 @@ final sorted = spyFamily.sorted((a, b) => b.id.compareTo(a.id));
 
 ## Extension
 
-If desired, a method can be added to the Users class using extension.
-This can be a very effective way to add User-specific processing.
+もし必要であれば、extensionを使ってUsersクラスにメソッドを追加することができます。
+User固有の処理を追加する場合にとても有効な手段となります。
 
 ```dart
 /// names: (Anya, Loid, Yor)
