@@ -40,6 +40,9 @@ class EntityMap<Id, E extends Entity<Id>> {
   /// Returns the [Entity] of the [id] that this holds
   E? byId(Id id) => _entities[id];
 
+  /// Returns the [Entity] of the [index]
+  E at(int index) => _entities.values.toList()[index];
+
   /// Returns the [Entity] of [ids] held by this as a new [EntityMap].
   EntityMap<Id, E> byIds(Iterable<Id> ids) {
     return EntityMap.fromIterable(
@@ -100,6 +103,13 @@ class EntityMap<Id, E extends Entity<Id>> {
   /// Returns a new [EntityMap] that holds all Entities that satisfy the given [test].
   EntityMap<Id, E> where(bool Function(E) test) {
     return EntityMap.fromIterable(_entities.values.where(test));
+  }
+
+  EntityMap<Id, E> or(
+    EntityMap<Id, E> Function(EntityMap<Id, E> entityMap) f1,
+    EntityMap<Id, E> Function(EntityMap<Id, E> entityMap) f2,
+  ) {
+    return f1(this).marge(f2(this));
   }
 
   /// The current elements of this iterable modified by convert.
